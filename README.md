@@ -165,7 +165,7 @@ Install dependencies using `pip`.
 > pip install -r requirements/base.txt
 ```
 
-Sample `docker-compose.yaml` is included in project root.
+Sample `docker-compose-example.yaml` is included in project root to create a local `docker-compose.yaml` file.
 ```
 > docker-compose build # build project
 > docker-compose up elasticsearch # Start Elasticsearch

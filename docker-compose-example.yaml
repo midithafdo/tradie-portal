@@ -1,0 +1,51 @@
+version: "3"
+services:
+  elasticsearchn792:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - /usr/share/elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+#  kibana:
+#    image: docker.elastic.co/kibana/kibana:7.9.2
+#    depends_on:
+#      - elasticsearch
+#    ports:
+#      - 5601:5601
+#  zookeeper:
+#    image: 'wurstmeister/zookeeper:latest'
+#    ports:
+#      - 2181:2181
+  api:
+    build: .
+    command: >
+      api
+      --es-host=elasticsearchn792:9200
+      --job-index=tradie-job.0
+      --note-index=job-note.2
+      --client-index=tradie-client
+#      --config-file=config.yaml
+#    depends_on:
+#      - elasticsearch
+#      - kafka
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app/
+    environment:
+      # Add environment variables here
+      - EXAMPLE_ENV_VAR=value
+networks:
+    default:
+        external:
+            name: predicthq
