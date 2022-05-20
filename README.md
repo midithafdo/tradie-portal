@@ -175,6 +175,11 @@ Sample `docker-compose.yaml` is included in project root.
 Open API docs will be available upon starting the API
 `BASE_URL/openapi.json`
 
+### Setting up Elasticsearch Indices
+Use the mapping files in `/tradie_portal/dao/mappings/` to create the indices. More details can be found in Elasticsearch docs.
+
+[Elasticsearch Docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html)
+
 ### Unit Tests
 
 `TBA`
