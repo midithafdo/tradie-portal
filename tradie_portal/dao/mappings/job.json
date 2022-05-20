@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "id": {
+      "type": "keyword"
+    },
+    "create_dt": {
+      "type": "date"
+    },
+    "tradie_id": {
+      "type": "keyword"
+    },
+    "status": {
+      "type": "keyword"
+    },
+    "client_id": {
+      "type": "keyword"
+    },
+    "note_ids": {
+      "type": "keyword"
+    }
+  }
+}

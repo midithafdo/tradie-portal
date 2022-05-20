@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "id": {
+      "type": "keyword"
+    },
+    "create_dt": {
+      "type": "date"
+    },
+    "tradie_id": {
+      "type": "keyword"
+    },
+    "contact_no": {
+      "type": "text"
+    },
+    "name": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    }
+  }
+}
